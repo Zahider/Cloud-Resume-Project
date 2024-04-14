@@ -1,0 +1,249 @@
+<!DOCTYPE HTML>
+<!--
+	Hyperspace by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+
+<!-- Tab -->
+<html>
+
+<head>
+	<title>RideShare Cloud App</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="assets/css/main.css" />
+	<noscript>
+		<link rel="stylesheet" href="assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Header -->
+	<header id="header">
+		<a href="index.html" class="title">Zahid Rafiqzad</a>
+		<nav>
+			<ul>
+				<li><a href="index.html">Back to Home</a></li>
+			</ul>
+		</nav>
+	</header>
+
+	<!-- Wrapper -->
+	<div id="wrapper">
+
+		<!-- Main -->
+		<section id="main" class="wrapper">
+			<div class="inner">
+				<h1 class="major">End-to-End RideShare WebApp - JetHop</h1>
+				<span class="center"><img class="center" src="images/JHappArchitecture.png" alt=""  style="width: 86%;"/></span>
+				<p>Welcome to JetHop, an AWS-hosted web application for requesting air rides. Think Uber, but with
+					planes!</p>
+				<p>
+					Seamlessly integrating ARCGIS maps, JetHop features robust authentication via AWS Cognito
+					User Pools and IAM ensured secure access. Leveraging AWS Amplify and
+					CodeCommit enabled rapid deployment and scaling with minimal configuration. Backend infrastructure,
+					including Lambda, DynamoDB, and API Gateway, facilitated efficient ride request storage and reliable
+					service delivery.
+				</p>
+
+				<h3>Steps taken to create JetHop:</h3><br>
+
+				<section>
+					<section>
+						<div class="inner">
+							<p><strong>1.</strong> Create code commit repository to store my code</p>
+						</div>
+						<a href="#" class="image"><img src="images/JHone.png" alt="" style="width: 86%;"
+								data-position="center center" /></a>
+					</section>
+					<section>
+						<div class="inner">
+							<p><strong>2.</strong> Create a new admin user for JetHop usage since it is not best
+								practice to use root user</p>
+						</div>
+						<a href="#" class="image"><img src="images/JHtwo.png" alt="" style="width: 86%;"
+								data-position="center center" /></a>
+					</section>
+					<section>
+						<div class="inner">
+							<p><strong>3.</strong> Add "AWSCodeCommitPowerUser" policy to new admin IAM user so I can
+								access CodeCommit</p>
+						</div>
+						<a href="#" class="image"><img src="images/JHthree.png" alt="" style="width: 86%;"
+								data-position="center center" /></a>
+					</section>
+					<section>
+						<div class="inner">
+							<p><strong>4.</strong> Create Git credentials for new IAM user to allow HTTPS connections to
+								CodeCommit</p>
+						</div>
+						<a href="#" class="image"><img src="images/JHfour.png" alt="" style="width: 86%;"
+								data-position="center center" /></a>
+					</section>
+					<section>
+						<div class="inner">
+							<p><strong>5.</strong> Clone repository using CloudShell by entering repository and
+								selecting "Clone HTTPS" and pasting it, then enter your HTTTPS Git Credentials. This is
+								for future use to test out code and make sure everything is working correctly
+							</p>
+						</div>
+						<a href="#" class="image"><img src="images/JHfive.png" alt="" style="width: 86%;"
+								data-position="center center" /></a>
+					</section>
+					<section>
+						<div class="inner">
+							<p><strong>6.</strong> Push premade code into repository
+							</p>
+						</div>
+						<a href="#" class="image"><img src="images/JHsix.png" alt="" style="width: 86%;"
+								data-position="center center" /></a>
+					</section>
+					<section>
+						<div class="inner">
+							<p><strong>7.</strong> Host new web app on AWS Amplify
+							</p>
+						</div>
+						<a href="#" class="image"><img src="images/JHseven.png" alt="" style="width: 86%;"
+								data-position="center center" /></a>
+					</section>
+					<section>
+						<div class="inner">
+							<p><strong>8.</strong> Create User Pool in AWS Cognito to authenticate user accessing the
+								website
+							</p>
+						</div>
+						<a href="#" class="image"><img src="images/JHeight.png" alt="" style="width: 86%;"
+								data-position="center center" /></a>
+					</section>
+					<section>
+						<div class="inner">
+							<p><strong>9.</strong> Update config.js file in CodeCommit for our app to use the User Pool
+								in Cognito
+							</p>
+						</div>
+						<a href="#" class="image"><img src="images/JHnine.png" alt="" style="width: 86%;"
+								data-position="center center" /></a>
+					</section>
+					<section>
+						<div class="inner">
+							<p><strong>10.</strong> Copy authentication token for now as we will use it later on. This
+								page will be created later on.
+							</p>
+						</div>
+						<a href="#" class="image"><img src="images/JHten.png" alt="" style="width: 86%;"
+								data-position="center center" /></a>
+					</section>
+					<section>
+						<div class="inner">
+							<p><strong>11.</strong> Create a new DynamoDB Table to store ride requests.
+							</p>
+						</div>
+						<a href="#" class="image"><img src="images/JHeleven.png" alt="" style="width: 86%;"
+								data-position="center center" /></a>
+					</section>
+					<section>
+						<div class="inner">
+							<p><strong>12.</strong> Create a new Role using IAM with "LambdaBasicExecutionRole", assign
+								specific permission "PutItem" and Add ARN of our DynamoDB Table to the resource.
+							</p>
+						</div>
+						<a href="#" class="image"><img src="images/JHtwelve.png" alt="" style="width: 86%;"
+								data-position="center center" /></a>
+					</section>
+					<section>
+						<div class="inner">
+							<p><strong>13.</strong> Create a new Lambda function and use the execution Role we created.
+							</p>
+						</div>
+						<a href="#" class="image"><img src="images/JHthirteen.png" alt="" style="width: 86%;"
+								data-position="center center" /></a>
+					</section>
+					<section>
+						<div class="inner">
+							<p><strong>14.</strong> Enter executable backend code into Lambda code source.
+							</p>
+						</div>
+						<a href="#" class="image"><img src="images/JHfourteen.png" alt="" style="width: 86%;"
+								data-position="center center" /></a>
+					</section>
+					<section>
+						<div class="inner">
+							<p><strong>15.</strong> Deploy and Run Test code to ensure write functionality into our
+								DynamoDB table.
+							</p>
+						</div>
+						<a href="#" class="image"><img src="images/JHfifteen.png" alt="" style="width: 86%;"
+								data-position="center center" /></a>
+					</section>
+					<section>
+						<div class="inner">
+							<p><strong>16.</strong> Create a new REST api with edge optimized endpoint for faster
+								service. This is for communication accross the internet but you can also chose private
+								for local or a
+								regional endpoint as well based on your needs. Then create an authorizer to hook up API
+								gateway and cognito together.
+							</p>
+						</div>
+						<a href="#" class="image"><img src="images/JHsixteen.png" alt="" style="width: 86%;"
+								data-position="center center" /></a>
+					</section>
+					<section>
+						<div class="inner">
+							<p><strong>17.</strong> Pasted AWS Auth token recieved from website earlier into Test
+								authorizer function and confirmed with Code 200
+							</p>
+						</div>
+						<a href="#" class="image"><img src="images/JHseventeen.png" alt="" style="width: 86%;"
+								data-position="center center" /></a>
+					</section>
+					<section>
+						<div class="inner">
+							<p><strong>18.</strong> Create a resource in your API to connect to the Lambda function.
+								Create Dev stage and paste Invoke URL into CodeCommit config.js file.
+							</p>
+						</div>
+						<a href="#" class="image"><img src="images/JHeighteen.png" alt="" style="width: 86%;"
+								data-position="center center" /></a>
+					</section>
+					<section>
+						<div class="inner">
+							<p><strong>19.</strong> Now refresh the Web Application and save time by calling yourself a
+								Jet to Hop on!
+							</p>
+						</div>
+						<a href="#" class="image"><img src="images/JHnineteen.png" alt="" style="width: 99%;"
+								data-position="center center" /></a>
+
+					</section>
+
+				</section>
+
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Footer -->
+	<footer id="footer" class="wrapper style1-alt">
+		<div class="inner">
+			<ul class="menu">
+				<li>&copy; ZR. All rights reserved.</li>
+				<li>zahid.raf@outlook.com</a></li>
+			</ul>
+		</div>
+	</footer>
+
+	<!-- Scripts -->
+	<script src="assets/js/jquery.min.js"></script>
+	<script src="assets/js/jquery.scrollex.min.js"></script>
+	<script src="assets/js/jquery.scrolly.min.js"></script>
+	<script src="assets/js/browser.min.js"></script>
+	<script src="assets/js/breakpoints.min.js"></script>
+	<script src="assets/js/util.js"></script>
+	<script src="assets/js/main.js"></script>
+
+</body>
+
+</html>
