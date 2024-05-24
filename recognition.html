@@ -1,0 +1,221 @@
+<!DOCTYPE HTML>
+<!--
+	Hyperspace by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+
+<!-- Tab -->
+<html>
+
+<head>
+	<title>RideShare Cloud App</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="assets/css/main.css" />
+	<noscript>
+		<link rel="stylesheet" href="assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Header -->
+	<header id="header">
+		<a href="index.html" class="title">Zahid Rafiqzad</a>
+		<nav>
+			<ul>
+				<li><a href="index.html">Back to Home</a></li>
+			</ul>
+		</nav>
+	</header>
+
+	<!-- Wrapper -->
+	<div id="wrapper">
+
+		<!-- Main -->
+		<section id="main" class="wrapper">
+			<div class="inner">
+				<h1 class="major">License Plate Recognition and Visualizer</h1>
+				<span class="center"><img class="center" src="images/LPbanner.png" alt="" style="width: 86%;" /></span>
+				<p>Ever thought about creating an easy script to read license plates? Well look no further!</p>
+				<p>
+					This Python script performs Optical Character Recognition (OCR) on an image using EasyOCR and
+					highlights the recognized text with OpenCV. After importing necessary libraries (NumPy, OpenCV,
+					EasyOCR), it initializes an OCR reader for English, processes the image to extract text, and prints
+					the results. The script then draws a red bounding box around the detected text and overlays the
+					recognized text on the image. Finally, it displays the annotated image in a new window.
+				</p>
+
+				<h3>Steps taken:</h3><br>
+
+				<section>
+					<section>
+						<div class="inner">
+							<p><strong>1.</strong> Open command prompt and install EasyOCR by using the command 'pip
+								install easyocr'.</p>
+						</div>
+						<a href="#" class="image"><img src="images/LPone.png" alt="" style="width: 86%;"
+								data-position="center center" /></a>
+					</section>
+					<section>
+						<div class="inner">
+							<p><strong>2.</strong> Now install OpenCV using the command 'pip install opencv-python'
+							</p>
+						</div>
+						<a href="#" class="image"><img src="images/LPtwo.png" alt="" style="width: 86%;"
+								data-position="center center" /></a>
+					</section>
+					<section>
+						<div class="inner">
+							<p><strong>3.</strong> Create a python file and import numpy, cv2 and easyocr libraries for
+								data, file functions and reading/scanning objects.
+							</p>
+						</div>
+						<a href="#" class="image"><img src="images/LPthree.png" alt="" style="width: 86%;"
+								data-position="center center" /></a>
+					</section>
+					<section>
+						<div class="inner">
+							<p><strong>4.</strong> Create a variable that will use EasyOCR to read within files in
+								English.</p>
+						</div>
+						<a href="#" class="image"><img src="images/LPfour.png" alt="" style="width: 86%;"
+								data-position="center center" /></a>
+					</section>
+					<section>
+						<div class="inner">
+							<p><strong>5.</strong> Create a variable that will read our uploaded image, pass it through
+								our model and then store it in that variable. Name the variable ocr_results. This should
+								be enough for now to get the text location, model's guess of what the text is, and the
+								accuracy in percentage. Next, add a line to print the answers.
+
+							</p>
+						</div>
+						<a href="#" class="image"><img src="images/LPfive.png" alt="" style="width: 86%;"
+								data-position="center center" /></a>
+					</section>
+					<section>
+						<div class="inner">
+							<p><strong>6.</strong> Run the command and see the results. In the screenshot below, green
+								is the text guess, and pink is the accuracy. Below that is the picture "car.png" that
+								was used for the scan. As we can see, the model is fairly accurate with the exception of
+								one letter error per text.
+							</p>
+						</div>
+						<a href="#" class="image"><img src="images/LPsix.png" alt="" style="width: 86%;"
+								data-position="center center" /></a>
+					</section>
+					<section>
+						<div class="inner">
+							<p><strong>7.</strong> Next we will create a bounding box around our image so we can point
+								out and print the detected text with our image in a new window. Start by declaring two
+								variables that will use indexing to bound the top left and bottom right corners of the
+								ocr_results where the text was detected.
+
+							</p>
+						</div>
+						<a href="#" class="image"><img src="images/LPseven.png" alt="" style="width: 86%;"
+								data-position="center center" /></a>
+					</section>
+					<section>
+						<div class="inner">
+							<p><strong>8.</strong> Extract the recognized text from ocr_results corresponding to the
+								bounding box.
+
+							</p>
+						</div>
+						<a href="#" class="image"><img src="images/LPeight.png" alt="" style="width: 86%;"
+								data-position="center center" /></a>
+					</section>
+					<section>
+						<div class="inner">
+							<p><strong>9.</strong> Create a variable named 'img' and read the previously used "car.png"
+								image into it using cv2, then use rectangle function to draw a box with the top_left and
+								bottom_right variables. Now print the recognized text inside 'img' and to make it more
+								visually appealing, change the font, size and thickness of the box.
+
+							</p>
+						</div>
+						<a href="#" class="image"><img src="images/LPnine.png" alt="" style="width: 86%;"
+								data-position="center center" /></a>
+					</section>
+					<section>
+						<div class="inner">
+							<p><strong>10.</strong> Create a new window using the cv2.imshow function that shows our new
+								modified image with the detected results printed on top, and use the cv2.waitKey
+								function to keep the window open.
+
+							</p>
+						</div>
+						<a href="#" class="image"><img src="images/LPten.png" alt="" style="width: 86%;"
+								data-position="center center" /></a>
+					</section>
+					<section>
+						<div class="inner">
+							<p><strong>11.</strong> Run the code and see the results.
+							</p>
+						</div>
+						<a href="#" class="image"><img src="images/LPeleven.png" alt="" style="width: 86%;"
+								data-position="center center" /></a>
+					</section>
+				</section>
+
+				<br><h3>Code:</h3>
+				<pre><code>
+# Importing libraries
+import numpy as np #library for working with numerical data
+import cv2 #opencv library
+import easyocr #EasyOCR library
+
+reader = easyocr.Reader(['en']) #read in english language
+
+# reads our image, passes it through a model and stores the results in ocr_results
+ocr_results = reader.readtext("./car.png")
+
+print(ocr_results)
+
+# creates a bounding box around the recognized text using indexing
+top_left = ocr_results[0][0][0]
+bottom_right = ocr_results[0][0][2]
+
+# extracts the recognized text from the ocr_results corresponding to the bounding box
+text = ocr_results[0][1]
+
+# reads image, creates box around recognied text, prints text on top of box
+img = cv2.imread("./car.png")
+img = cv2.rectangle(img, top_left, bottom_right, (0,0,255), 5)
+img = cv2.putText(img, text, top_left, cv2.FONT_HERSHEY_SIMPLEX, 2, (0,0,255), 2, cv2.LINE_AA)
+
+# open image in a new window using imshow and keep the window open indefinitely using waitKey
+cv2.imshow('im', img)
+cv2.waitKey(0)
+				</code></pre>
+
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Footer -->
+	<footer id="footer" class="wrapper style1-alt">
+		<div class="inner">
+			<ul class="menu">
+				<li>&copy; ZR. All rights reserved.</li>
+				<li>zahid.raf@outlook.com</a></li>
+			</ul>
+		</div>
+	</footer>
+
+	<!-- Scripts -->
+	<script src="assets/js/jquery.min.js"></script>
+	<script src="assets/js/jquery.scrollex.min.js"></script>
+	<script src="assets/js/jquery.scrolly.min.js"></script>
+	<script src="assets/js/browser.min.js"></script>
+	<script src="assets/js/breakpoints.min.js"></script>
+	<script src="assets/js/util.js"></script>
+	<script src="assets/js/main.js"></script>
+
+</body>
+
+</html>

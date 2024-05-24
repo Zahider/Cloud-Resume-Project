@@ -1,0 +1,233 @@
+<!DOCTYPE HTML>
+<!--
+	Hyperspace by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+
+<!-- Tab -->
+<html>
+
+<head>
+	<title>RideShare Cloud App</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="assets/css/main.css" />
+	<noscript>
+		<link rel="stylesheet" href="assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Header -->
+	<header id="header">
+		<a href="index.html" class="title">Zahid Rafiqzad</a>
+		<nav>
+			<ul>
+				<li><a href="index.html">Back to Home</a></li>
+			</ul>
+		</nav>
+	</header>
+
+	<!-- Wrapper -->
+	<div id="wrapper">
+
+		<!-- Main -->
+		<section id="main" class="wrapper">
+			<div class="inner">
+				<h1 class="major">IAM & CIS Cloud Security Audit</h1>
+				<span class="center"><img class="center" src="images/CAbanner.png" alt="" style="width: 76%;" /></span>
+				<p>
+					In this project I have added a user into a group through IAM, granting them access to perform
+					specific tasks based on the least privelage premise and added custom password policy to ensure
+					maximum security. We will also review all changes made through CloudTrail. Then we will perform a
+					CIS benchmark audit with Prowler which is an open source security tool used to perform Cloud
+					security best practice assesments, audits, forensics readiness and much more.
+				</p>
+
+				<h3>Steps taken to complete a CIS audit:</h3><br>
+
+				<section>
+					<section>
+						<div class="inner">
+							<p><strong>1.</strong> Open AWS Identity and Access Management with root user acount and
+								create a new user.</p>
+						</div>
+						<a href="#" class="image"><img src="images/CAone.png" alt="" style="width: 86%;"
+								data-position="center center" /></a>
+					</section>
+					<section>
+						<div class="inner">
+							<p><strong>2.</strong> For user permissions, select "Add User to a group" and create a new
+								User Group.</p>
+						</div>
+						<a href="#" class="image"><img src="images/CAtwo.png" alt="" style="width: 86%;"
+								data-position="center center" /></a>
+					</section>
+					<section>
+						<div class="inner">
+							<p><strong>3.</strong> Name the new User Group and provide "Administrator Access". This
+								policy allows the user full access to everything.</p>
+						</div>
+						<a href="#" class="image"><img src="images/CAthree.png" style="width: 86%;"
+								data-position="center center" /></a>
+					</section>
+					<section>
+						<div class="inner">
+							<p><strong>4.</strong> Now create a second user.</p>
+						</div>
+						<a href="#" class="image"><img src="images/CAfour.png" alt="" style="width: 86%;"
+								data-position="center center" /></a>
+					</section>
+					<section>
+						<div class="inner">
+							<p><strong>5.</strong> For user permissions, select "Add User to a group" and create a new
+								User Group.
+							</p>
+						</div>
+						<a href="#" class="image"><img src="images/CAfive.png" alt="" style="width: 86%;"
+								data-position="center center" /></a>
+					</section>
+					<section>
+						<div class="inner">
+							<p><strong>6.</strong> Name the new User Group and provide "AmazonEC2ReadOnly". This policy
+								allows the user only read access to EC2 instances.
+							</p>
+						</div>
+						<a href="#" class="image"><img src="images/CAsix.png" alt="" style="width: 86%;"
+								data-position="center center" /></a>
+					</section>
+					<section>
+						<div class="inner">
+							<p><strong>7.</strong> Now head over to Account Settings and create a Custom Password Policy
+								to ensure increased security and allowing users to change their own password.
+							</p>
+						</div>
+						<a href="#" class="image"><img src="images/CAseven.png" alt="" style="width: 86%;"
+								data-position="center center" /></a>
+					</section>
+					<section>
+						<div class="inner">
+							<p><strong>8.</strong> Open AWS CloudTrail and select Event History to view all the
+								management events showing the changes we just made.
+							</p>
+						</div>
+						<a href="#" class="image"><img src="images/CAeight.png" alt="" style="width: 86%;"
+								data-position="center center" /></a>
+					</section>
+					<section>
+						<div class="inner">
+							<p><strong>9.</strong> Open the AWS CLI known as CloudShell.
+							</p>
+						</div>
+						<a href="#" class="image"><img src="images/CAnine.png" alt="" style="width: 86%;"
+								data-position="center center" /></a>
+					</section>
+					<section>
+						<div class="inner">
+							<p><strong>10.</strong> Copy the quick start commands from Prowler's website for AWS
+								CloudShell to install Prowler and any missing dependencies.
+							</p>
+						</div>
+						<a href="#" class="image"><img src="images/CAten.png" alt="" style="width: 86%;"
+								data-position="center center" /></a>
+					</section>
+					<section>
+						<div class="inner">
+							<p><strong>11.</strong> Now create a new user with a Policy attached directly to perform
+								security audits and full access to S3.
+							</p>
+						</div>
+						<a href="#" class="image"><img src="images/CAeleven.png" alt="" style="width: 86%;"
+								data-position="center center" /></a>
+					</section>
+					<section>
+						<div class="inner">
+							<p><strong>12.</strong> Now configure Prowler to have access to run the scan by typing "aws
+								configure" on CloudShell and pasting the Access Key of our Audit User.
+							</p>
+						</div>
+						<a href="#" class="image"><img src="images/CAtwelve.png" alt="" style="width: 86%;"
+								data-position="center center" /></a>
+					</section>
+					<section>
+						<div class="inner">
+							<p><strong>13.</strong> Check available compliance frameworks by executing command "prowler
+								aws --list-compliance".
+							</p>
+						</div>
+						<a href="#" class="image"><img src="images/CAthirteen.png" alt="" style="width: 86%;"
+								data-position="center center" /></a>
+					</section>
+					<section>
+						<div class="inner">
+							<p><strong>14.</strong> Run a CIS-1.4 compliance check by running the command "prowler aws
+								--compliance cis_1.4_aws".
+							</p>
+						</div>
+						<a href="#" class="image"><img src="images/CAfourteen.png" alt="" style="width: 86%;"
+								data-position="center center" /></a>
+					</section>
+					<section>
+						<div class="inner">
+							<p><strong>15.</strong> Open AWS S3 and create a new bucket to store the CIS audit results.
+							</p>
+						</div>
+						<a href="#" class="image"><img src="images/CAfifteen.png" alt="" style="width: 86%;"
+								data-position="center center" /></a>
+					</section>
+					<section>
+						<div class="inner">
+							<p><strong>16.</strong> Store the detailed results of the CIS audit into the new S3 bucket through the CLI.
+							</p>
+						</div>
+						<a href="#" class="image"><img src="images/CAsixteen.png" alt="" style="width: 86%;"
+								data-position="center center" /></a>
+					</section>
+					<section>
+						<div class="inner">
+							<p><strong>17.</strong> Check S3 bucket to ensure audit result was saved.
+							</p>
+						</div>
+						<a href="#" class="image"><img src="images/CAseventeen.png" alt="" style="width: 86%;"
+								data-position="center center" /></a>
+					</section>
+					<section>
+						<div class="inner">
+							<p><strong>18.</strong> Download and open file to see if and where CIS benchmarks have and have not been met.
+							</p>
+						</div>
+						<a href="#" class="image"><img src="images/CAeighteen.png" alt="" style="width: 86%;"
+								data-position="center center" /></a>
+					</section>
+
+				</section>
+
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Footer -->
+	<footer id="footer" class="wrapper style1-alt">
+		<div class="inner">
+			<ul class="menu">
+				<li>&copy; ZR. All rights reserved.</li>
+				<li>zahid.raf@outlook.com</a></li>
+			</ul>
+		</div>
+	</footer>
+
+	<!-- Scripts -->
+	<script src="assets/js/jquery.min.js"></script>
+	<script src="assets/js/jquery.scrollex.min.js"></script>
+	<script src="assets/js/jquery.scrolly.min.js"></script>
+	<script src="assets/js/browser.min.js"></script>
+	<script src="assets/js/breakpoints.min.js"></script>
+	<script src="assets/js/util.js"></script>
+	<script src="assets/js/main.js"></script>
+
+</body>
+
+</html>

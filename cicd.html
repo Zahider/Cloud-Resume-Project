@@ -1,0 +1,171 @@
+<!DOCTYPE HTML>
+<!--
+	Hyperspace by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+
+<!-- Tab -->
+<html>
+
+<head>
+	<title>RideShare Cloud App</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="assets/css/main.css" />
+	<noscript>
+		<link rel="stylesheet" href="assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Header -->
+	<header id="header">
+		<a href="index.html" class="title">Zahid Rafiqzad</a>
+		<nav>
+			<ul>
+				<li><a href="index.html">Back to Home</a></li>
+			</ul>
+		</nav>
+	</header>
+
+	<!-- Wrapper -->
+	<div id="wrapper">
+
+		<!-- Main -->
+		<section id="main" class="wrapper">
+			<div class="inner">
+				<h1 class="major">CI/CD Automation for EC2 Site Deployment</h1>
+				<span class="center"><img class="center" src="images/Rbanner.png" alt="" style="width: 86%;" /></span>
+				<p>Want to host a website using AWS cloud that automatically updates when you make changes to your
+					GitHub repository? You're at the right place!</p>
+				<p>
+					This project guides you to effortlessly deploy and update your website using CI/CD principles. By
+					harnessing the power of AWS EC2 instances and GitHub Actions, you can ensure that your website is
+					always up-to-date with the latest changes from your repository, delivering a smooth and efficient
+					user experience.
+				</p>
+
+				<h3>Here's what you have to do:</h3><br>
+
+				<section>
+					<section>
+						<div class="inner">
+							<p><strong>1.</strong> Log-in to the AWS console and create an EC2 instance. Select Ubuntu
+								as the OS.
+							</p>
+						</div>
+						<a href="#" class="image"><img src="images/Rone.png" alt="" style="width: 86%;"
+								data-position="center center" /></a>
+					</section>
+					<section>
+						<div class="inner">
+							<p><strong>2.</strong> Create a new key pair for this EC2, this will be used later on for
+								accessing the instance.
+							</p>
+						</div>
+						<a href="#" class="image"><img src="images/Rtwo.png" alt="" style="width: 86%;"
+								data-position="center center" /></a>
+					</section>
+					<section>
+						<div class="inner">
+							<p><strong>3.</strong> Create a new security group and allow HTTPS traffic from the internet
+								for security as it encrypts data exchange between a user and the web server. A premade
+								security group can also be used. Just ensure for inbound rules the following ports are
+								added: HTTP 80, HTTPS 443 and SSH 22.
+							</p>
+						</div>
+						<a href="#" class="image"><img src="images/Rthree.png" alt="" style="width: 86%;"
+								data-position="center center" /></a>
+					</section>
+					<section>
+						<div class="inner">
+							<p><strong>4.</strong> Now enter your GitHub repository, go to settings and create a new
+								secret. Paste your previously created Key Pair in the secret box. This will let GitHub
+								actions access and update your website on your behalf everytime there are changes made
+								to your repository.
+							</p>
+						</div>
+						<a href="#" class="image"><img src="images/Rfour.png" alt="" style="width: 86%;"
+								data-position="center center" /></a>
+					</section>
+					<section>
+						<div class="inner">
+							<p><strong>5.</strong> Head over to your EC2 instance anc copy the public IPv4 DNS address.
+								Now create another secret and use the address as another secret. This is so GitHub knows
+								where to access the instance.
+							</p>
+						</div>
+						<a href="#" class="image"><img src="images/Rfive.png" alt="" style="width: 86%;"
+								data-position="center center" /></a>
+					</section>
+					<section>
+						<div class="inner">
+							<p><strong>6.</strong> Create another secret, named USERNAME. Since we are using Ubuntu as
+								our OS, the username will be preset to ubuntu.
+							</p>
+						</div>
+						<a href="#" class="image"><img src="images/Rsix.png" alt="" style="width: 86%;"
+								data-position="center center" /></a>
+					</section>
+					<section>
+						<div class="inner">
+							<p><strong>7.</strong> Create one last secret named TARGET_DIR which is the target
+								directory, set as home.
+							</p>
+						</div>
+						<a href="#" class="image"><img src="images/Rseven.png" alt="" style="width: 86%;"
+								data-position="center center" /></a>
+					</section>
+					<section>
+						<div class="inner">
+							<p><strong>8.</strong> Create a new GitHub actions workflow by creating a new .yaml file in
+								your repository. This GitHub Actions workflow triggers a deployment process to an EC2
+								instance when there is a push to the main branch, checking out the repository, deploying
+								files via SSH, and executing remote SSH commands to set up Apache and move files to the
+								web server's root directory.
+							</p>
+						</div>
+						<a href="#" class="image"><img src="images/Reight.png" alt="" style="width: 86%;"
+								data-position="center center" /></a>
+					</section>
+					<section>
+						<div class="inner">
+							<p><strong>9.</strong> Copy your public IPv4 address of the EC2 instance and see your
+								website live. Now any changes made on the github repository will be updated immediately.
+							</p>
+						</div>
+						<a href="#" class="image"><img src="images/Rnine.png" alt="" style="width: 86%;"
+								data-position="center center" /></a>
+					</section>
+				</div>
+
+			
+
+		</section>
+
+	</div>
+
+	<!-- Footer -->
+	<footer id="footer" class="wrapper style1-alt">
+		<div class="inner">
+			<ul class="menu">
+				<li>&copy; ZR. All rights reserved.</li>
+				<li>zahid.raf@outlook.com</a></li>
+			</ul>
+		</div>
+	</footer>
+
+	<!-- Scripts -->
+	<script src="assets/js/jquery.min.js"></script>
+	<script src="assets/js/jquery.scrollex.min.js"></script>
+	<script src="assets/js/jquery.scrolly.min.js"></script>
+	<script src="assets/js/browser.min.js"></script>
+	<script src="assets/js/breakpoints.min.js"></script>
+	<script src="assets/js/util.js"></script>
+	<script src="assets/js/main.js"></script>
+
+</body>
+
+</html>
