@@ -14,4 +14,4 @@ Steps taken to automate CI/CD through GitHub actions.
 9. Copy your public IPv4 address of the EC2 instance and see your website live. Now any changes made on the github repository will be updated immediately.
 
 ******NOTE****** Instance and VPC has been terminated to avoid charges
-Website is now statically hosted in an S3 bucket and can be accessed at zr.incognito.net
+Website is now statically hosted in an S3 bucket and can be accessed at zrcovert.com
