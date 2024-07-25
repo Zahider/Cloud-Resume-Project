@@ -1,0 +1,190 @@
+<!DOCTYPE HTML>
+<!--
+	Hyperspace by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+
+<!-- Tab -->
+<html>
+
+<head>
+    <title>PowerShell File Backup Scripting</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <noscript>
+        <link rel="stylesheet" href="assets/css/noscript.css" />
+    </noscript>
+</head>
+
+<body class="is-preload">
+
+    <!-- Header -->
+    <header id="header">
+        <a href="index.html" class="title">Zahid Rafiqzad</a>
+        <nav>
+            <ul>
+                <li><a href="index.html">Back to Home</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Wrapper -->
+    <div id="wrapper">
+
+        <!-- Main -->
+        <section id="main" class="wrapper">
+            <div class="inner">
+                <h1 class="major">PowerShell File Backup Scripting</h1>
+                <span class="center"><img class="center" src="images/PSBbanner.png" alt="" style="width: 76%;" /></span>
+                <p>
+                    I have been meaning to strengthen my foundational Powershell and scripting skills for a while now
+                    and recently as I was trying to find a way to store my projects folder locally, I decided to use
+                    this as an opportunity for a new portfolio project.
+                    My goal was to backup a folder stored in my desktop locally, and to add an extra challenge I decided
+                    to compress the folder since it would also save some space and set a time for recurring backups.
+                </p>
+
+                <h3>Steps taken:</h3><br>
+
+                <section>
+                    <section>
+                        <div class="inner">
+                            <p><strong>1.</strong> I started off by creating a new folder named "Powershell Backup" to
+                                store all the files, and opened the folder in VS Code. Within it, I created two
+                                additional files, "FileBackup.ps1" which is a scripting file and "Directories.txt" to
+                                use for storing text, however it can also be changed to a CSV file to be used with rows
+                                and columns in the future.
+                            </p>
+                        </div>
+                        <a href="#" class="image"><img src="images/PSBone.png" alt="" style="width: 86%;"
+                                data-position="center center" /></a>
+                    </section>
+                    <section>
+                        <div class="inner">
+                            <p><strong>2.</strong> Now in the Directories.txt file, I will paste the directory where all
+                                my projects are stored that I want to backup and compress. I can also add additional
+                                directories, however for now I only need this specific one.
+                            </p>
+                        </div>
+                        <a href="#" class="image"><img src="images/PSBtwo.png" alt="" style="width: 86%;"
+                                data-position="center center" /></a>
+                    </section>
+                    <section>
+                        <div class="inner">
+                            <p><strong>3.</strong> In the FileBackup.ps1 file, I will first declare a variable to store
+                                the directory location from our Directories.txt file. Then declare a second variable
+                                that reads the content of the file and stores it in a variable. In this scenario,
+                                $BackupLocations is the variable that will hold the content read from the file,
+                                Get-Content reads the content of the file, -Path specifies the path to the file whose
+                                content we will be reading, and $BackupLocationsFilePath is the variable that holds the
+                                path to the file we want to read.</p>
+                        </div>
+                        <a href="#" class="image"><img src="images/PSBthree.png" style="width: 86%;"
+                                data-position="center center" /></a>
+                    </section>
+                    <section>
+                        <div class="inner">
+                            <p><strong>4.</strong> Now create a second user.I will now declare two more variables: first
+                                one to store the directory of the new backup location, and second one to store the
+                                backup name and name format including the time it was created.
+                            </p>
+                        </div>
+                        <a href="#" class="image"><img src="images/PSBfour.png" alt="" style="width: 86%;"
+                                data-position="center center" /></a>
+                    </section>
+                    <section>
+                        <div class="inner">
+                            <p><strong>5.</strong> Since there is a possibility I might be adding additional
+                                directories, I want to future proof my code to run the script for multiple directories.
+                                To do this I will add a foreach() loop which will iterate through all directories. Just
+                                to ensure my code is working, I tested it with a write-output and run the code.
+                            </p>
+                        </div>
+                        <a href="#" class="image"><img src="images/PSBfive.png" alt="" style="width: 86%;"
+                                data-position="center center" /></a>
+                    </section>
+                    <section>
+                        <div class="inner">
+                            <p><strong>6.</strong> Next I want to see what files are inside the directory that we are
+                                backing-up. To do I will simply use Get-Children in our loop. This will not show the
+                                files within the folders, just the first layer of Children. To preserve the directory
+                                structure I will also use Containerize and Recurse.
+                            </p>
+                        </div>
+                        <a href="#" class="image"><img src="images/PSBsix.png" alt="" style="width: 86%;"
+                                data-position="center center" /></a>
+                    </section>
+                    <section>
+                        <div class="inner">
+                            <p><strong>7.</strong> To execute the backup, we will start by using an if statement inside
+                                our loop. First the command checks if our storage location exists, then the New-Item
+                                command creates a new item in the storage location and the -Path and -ItemType Directory
+                                specify the new path and that the new item should be a directory.
+
+                            </p>
+                        </div>
+                        <a href="#" class="image"><img src="images/PSBseven.png" alt="" style="width: 86%;"
+                                data-position="center center" /></a>
+                    </section>
+                    <section>
+                        <div class="inner">
+                            <p><strong>8.</strong> Now when I run the script, as you can see below it creates a new file
+                                with a directory structure in my specified storage location.
+                            </p>
+                        </div>
+                        <a href="#" class="image"><img src="images/PSBeight.png" alt="" style="width: 86%;"
+                                data-position="center center" /></a>
+                    </section>
+                    <section>
+                        <div class="inner">
+                            <p><strong>9.</strong> And for final touches, I will use Compress-Archive and
+                                CompressionLevel to compress my new file in the fastest time possible.
+                            </p>
+                        </div>
+                        <a href="#" class="image"><img src="images/PSBnine.png" alt="" style="width: 86%;"
+                                data-position="center center" /></a>
+                    </section>
+                    <section>
+                        <div class="inner">
+                            <p><strong>10.</strong> Now that I have finished writing all the code, I will be using
+                                Windows Task Scheduler to set a weekly backup on every Sunday night. To do this I opened
+                                Task Scheduler, Create basic task, provide name and description, select the frequency
+                                which in my case is every Sunday at 11:59pm, start a program and then select my
+                                FileBackup.ps1 file and then finish to complete my full project.
+                            </p>
+                        </div>
+                        <a href="#" class="image"><img src="images/PSBten.png" alt="" style="width: 86%;"
+                                data-position="center center" /></a>
+                    </section>
+
+                </section>
+
+            </div>
+        </section>
+
+    </div>
+
+    <!-- Footer -->
+    <footer id="footer" class="wrapper style1-alt">
+        <div class="inner">
+            <ul class="menu">
+                <li>&copy; ZR. All rights reserved.</li>
+                <li>zahid.raf@outlook.com</a></li>
+            </ul>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/jquery.scrollex.min.js"></script>
+    <script src="assets/js/jquery.scrolly.min.js"></script>
+    <script src="assets/js/browser.min.js"></script>
+    <script src="assets/js/breakpoints.min.js"></script>
+    <script src="assets/js/util.js"></script>
+    <script src="assets/js/main.js"></script>
+
+</body>
+
+</html>
